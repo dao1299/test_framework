@@ -1,0 +1,15 @@
+<!DOCTYPE xml>
+<suite name="AutomationSuite">
+	<listeners>
+        <!-- Allure TestNG listener -->
+        <listener class-name="io.qameta.allure.testng.AllureTestNg" />
+
+        <!-- Your custom listener for screenshots and logging -->
+        <listener class-name="listeners.TestListener" />
+    </listeners>
+    <test name="LoginTests" parallel="methods" thread-count="2">
+        <classes>
+            <class name="tests.AutomationExerciseTest"/>
+        </classes>
+    </test>
+</suite>
