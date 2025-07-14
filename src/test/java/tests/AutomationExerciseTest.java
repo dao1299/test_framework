@@ -20,5 +20,7 @@ public class AutomationExerciseTest extends BaseTest {
         Assert.assertTrue(productPage.verifySearchedProductTitleDisplayed());
 
         Assert.assertTrue(productPage.verifyProductsAreVisible());
+
+        Assert.assertTrue(productPage.verifyListProductInCart());
     }
 }

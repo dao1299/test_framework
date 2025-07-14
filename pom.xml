@@ -90,6 +90,11 @@
 	    <artifactId>commons-io</artifactId>
 	    <version>2.15.1</version>
 	</dependency>
+	  <dependency>
+		  <groupId>org.aspectj</groupId>
+		  <artifactId>aspectjweaver</artifactId>
+		  <version>1.9.21</version>
+	  </dependency>
 
   </dependencies>
   
@@ -106,15 +111,18 @@
             </plugin>
 
             <!-- Surefire Plugin to run TestNG tests -->
-            <plugin>
-                <artifactId>maven-surefire-plugin</artifactId>
-                <version>3.2.5</version>
-                <configuration>
-                    <suiteXmlFiles>
-                        <suiteXmlFile>testng.xml</suiteXmlFile>
-                    </suiteXmlFiles>
-                </configuration>
-            </plugin>
+			<plugin>
+				<artifactId>maven-surefire-plugin</artifactId>
+				<version>3.2.5</version>
+				<configuration>
+					<suiteXmlFiles>
+						<suiteXmlFile>testng.xml</suiteXmlFile>
+					</suiteXmlFiles>
+					<argLine>
+						-javaagent:"${settings.localRepository}/org/aspectj/aspectjweaver/1.9.21/aspectjweaver-1.9.21.jar"
+					</argLine>
+				</configuration>
+			</plugin>
 
             <!-- Allure Maven Plugin -->
 			<plugin>
